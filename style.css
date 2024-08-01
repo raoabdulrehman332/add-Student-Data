@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#copy{
+    color: gray;
+    display: block;
+    margin-top: 35px;
+    margin-bottom: 0px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+#heading{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: gray;
+    font-size: 40px;
+    font-weight: bold;
+}

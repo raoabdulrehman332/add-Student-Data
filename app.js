@@ -19,6 +19,10 @@ if(objStr!=null){
 
 addUserBtn.addEventListener('click',()=>{
     
+    Swal.fire({
+        icon: "success",
+        text: "Student Data has added",
+      });
     let name = userInput.value;
     let  rollNo = Math.floor(Math.random()*10000 + 9999)
     userId.push(rollNo)
@@ -78,28 +82,24 @@ function editinfo(id){
 }
 
 function deleteinfo(id){
-    usersArry.splice(id,1);
-    saveinfo(usersArry);
-    displayinfo()
-    
-
-
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+        });
+        usersArry.splice(id,1);
+        saveinfo(usersArry);
+        displayinfo()
+        }
+      });
 }
-
-
-// var a = [1,2,3,4,5]
-// let element =0
-
-// for(let index = 0 ; index < a.length ; index++){
-//     element += a[index]
-// }
-// console.log(element);
-
-
-// function foo(a,b,c){
-//     console.log(a+b,c);
-// }
-
-// foo(5,10,function abc(){
-
-// })
